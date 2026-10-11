@@ -1,0 +1,9 @@
+/home/user/time/chronos/static_spherical.py:506: RuntimeWarning: overflow encountered in scalar multiply
+  return (rk - yy, 2 * ptk - (rk + gg) * P, P)
+trial 0 M/r_in=0.49509 Z=10.78727 g_end=2.1e-02 max(|g|-rho)=9.5e-02
+trial 1 M/r_in=0.49505 Z=10.06196 g_end=7.4e-02 max(|g|-rho)=7.5e-02
+trial 2 M/r_in=0.49509 Z=10.05173 g_end=6.8e-03 max(|g|-rho)=1.0e-02
+trial 3 M/r_in=0.51734 Z=32.25411 g_end=4.4e-05 max(|g|-rho)=4.9e-02
+trial 4 M/r_in=0.49507 Z=10.00000 g_end=8.0e-06 max(|g|-rho)=-1.2e-04
+trial 5 M/r_in=0.49525 Z=10.01406 g_end=-1.2e-03 max(|g|-rho)=1.2e-03
+best feasible RAD+NEC M/r_in at Z=10: 0.49506842608529267   (theorem 0.45, single thin shell 0.495)

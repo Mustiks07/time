@@ -55,6 +55,40 @@ nested DEC shells Z=5.0: M/r_in = 0.48000 (K=3)
 nested DEC shells Z=10.0: M/r_in = 0.67981 (K=8)
 nested DEC shells Z=100.0: M/r_in = 2.34798 (K=8)
 MC tightness 0.984010759228248 adversarial 0.9975903546235467 RAD continuum 0.46206550052456796
+{
+ "beta2max=1.000": {
+  "test_shell_critical_compactness": 0.6666666334520023,
+  "single_shell_critical_Z": 2.529756498031259,
+  "family_M_over_rin": {
+   "5.0": 0.8338173844075292,
+   "10.0": 1.6676349415852554,
+   "100.0": 16.67635515515555
+  }
+ },
+ "beta2max=0.333": {
+  "test_shell_critical_compactness": 0.4336931230689115,
+  "single_shell_critical_Z": 1.6796491395266355,
+  "family_M_over_rin": {
+   "5.0": 5.5734463672825845,
+   "10.0": 34.06280683320681,
+   "100.0": 13926.312815053352
+  }
+ },
+ "optimiser": {
+  "1.000_2.0": {
+   "M_over_rin": 0.37499999974372644,
+   "K": 16,
+   "R": [
+    1.0,
+    1.1280044882534794,
+    1.1280202549770553,
+    1.1280315951840638,
+    1.1280428755568053,
+    1.2260731732881562,
+    1.2262549916822219,
+    1.226387554638001,
+    1.2286095114670026,
+    
 
 === 4. Mass requirements in SI ===
 {'R_m': '1', 'bound_kg': '6.06e+26', 'bound_Mjup': '0.319', 'thin_shell_noDEC_kg': '6.67e+26', 'thin_shell_noDEC_Mjup': '0.351', 'nested_DEC_kg': '9.15e+26', 'nested_DEC_Mjup': '0.482', 'extremal_BPS_kg': '1.21e+27', 'extremal_BPS_Mjup': '0.638', 'mean_density_kg_m3_thin_shell': '1.59e+26'}

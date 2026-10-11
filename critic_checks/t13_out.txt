@@ -1,0 +1,2 @@
+RAD Z=10: min M/r_in = (np.float64(0.463812476792953), 9.999999999999913, np.float64(0.8856119481753252))  (theorem bound 0.45)
+RADNEC Z=10: min M/r_in = None  (theorem bound 0.45)

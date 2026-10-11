@@ -85,7 +85,12 @@ def energy_conditions(rho, pr, pt, tol=0.0):
 # ---------------------------------------------------------------------------
 
 def alpha_lower_bound(M, r_in):
-    """Lower bound on the cavity lapse, valid for ρ ≥ 0, p_r ≤ ρ, no horizons.
+    """Lower bound on the cavity lapse, valid for ρ ≥ 0, p_r ≤ ρ and 2m(r) < r everywhere.
+
+    NOTE: 2m < r (monotone areal radius) is an independent hypothesis, not implied by the absence
+    of horizons: a 'bag of gold' behind a throat (radial-NEC violation) can have α_cav → 0 with
+    small ADM mass (critic's counterexample, critic_checks/t2_throat_counterexample.py).  The
+    unconditional form uses the maximal Misner–Sharp mass: α_cav ≥ 1 − 2 m_max / r_in.
 
     Proof sketch (full proof in reports/REPORT_05):  with y = 2m/r,
         Φ' = (m + 4πr³p_r)/(r(r-2m)) ≤ y/(r(1-y)) + y'/(2(1-y)),

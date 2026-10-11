@@ -1,0 +1,3 @@
+warm start: M= 0.6832287294249196 Z= 9.837428461815561 g_end= 0.009931632668983175
+controls DEC optimum: M/r_in= 0.666527917589138 Z= 10.00003184355578 feasible= False
+yg DEC optimum: None
