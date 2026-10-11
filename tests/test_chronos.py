@@ -159,3 +159,15 @@ def test_causal_neutron_star_compactness():
     # Haensel, Lasota & Zdunik (2000): 2M/R = 0.7081, z_max = 0.851 for p = ρ - ρ0
     assert mx['compactness'] == pytest.approx(0.7081, abs=5e-4)
     assert mx['Z_surface'] - 1 == pytest.approx(0.851, abs=1e-3)
+
+
+def test_theorem2_key_identity_symbolic():
+    """Φ' - [y/(r(1-y)) + y'/(2(1-y))] = 4π r² (p_r - ρ)/(r - 2m)  (≤ 0 iff p_r ≤ ρ)."""
+    r = sp.symbols('r', positive=True)
+    m = sp.Function('m')(r)
+    pr = sp.Function('p_r')(r)
+    rho = sp.diff(m, r) / (4 * sp.pi * r**2)
+    dPhi = (m + 4 * sp.pi * r**3 * pr) / (r * (r - 2 * m))
+    y = 2 * m / r
+    rhs = y / (r * (1 - y)) + sp.diff(y, r) / (2 * (1 - y))
+    assert sp.simplify(dPhi - rhs - 4 * sp.pi * r**2 * (pr - rho) / (r - 2 * m)) == 0

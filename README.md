@@ -42,7 +42,7 @@
 | `chronos/` | Вычислительный пакет (Python): кинематика, оболочки Израэля, обратная задача, оптимизация, Керр, BPS, клетка МП, динамика, TOV, масштабы |
 | `scripts/run_all.py` | Воспроизводит все числа и рисунки |
 | `results/` | `round1_results.json`, таблицы CSV, рисунки `figures/*.png` |
-| `tests/test_chronos.py` | 21 тест (символьные выводы, предельные случаи, регрессии) |
+| `tests/test_chronos.py` | 22 теста (символьные выводы, предельные случаи, регрессии) |
 | `independent_check/` | Слепое независимое воспроизведение ключевых величин |
 | `hypotheses/registry.md` | Реестр гипотез: принятые, открытые и отклонённые с причинами |
 
@@ -50,7 +50,7 @@
 
 ```bash
 pip install numpy scipy sympy matplotlib mpmath pytest
-python -m pytest -q          # 21 тест, ~2 мин
+python -m pytest -q          # 22 теста, ~2 мин
 python scripts/run_all.py    # все числа и рисунки, несколько минут
 ```
 
