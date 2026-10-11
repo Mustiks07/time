@@ -138,11 +138,10 @@ OUT['cavity_bound'] = {
     'extremal_shell_M_over_rin': {Z: 1 - 1 / Z for Z in [2, 5, 10, 100, 1000]},
     'nested_DEC_shells_M_over_rin': {Z: (v['M_over_rin'] if v else None) for Z, v in nested.items()},
 }
-dec_json = os.path.join(RES, 'dec_control_opt_10.json')
+dec_json = os.path.join(RES, 'dec_control_opt_Z10.json')      # produced separately (E9, ~10 min)
 if os.path.exists(dec_json):
     d = json.load(open(dec_json))
-    if '10.0' in d:
-        OUT['cavity_bound']['continuum_DEC_control_Z10_M_over_rin'] = d['10.0']['M_over_rin']
+    OUT['cavity_bound']['continuum_DEC_control_Z10_near_feasible'] = d['history'][-1]
 print('MC tightness', tight, 'adversarial', adv, 'RAD continuum', cont_rad and cont_rad['M_over_rin'])
 
 fig, ax = plt.subplots(figsize=(6.4, 4.0))
