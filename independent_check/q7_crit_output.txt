@@ -1,0 +1,16 @@
+N=100: 28 critical points of U with |x|<0.9 rho0; nearest ones:
+   |x*|=0.5212 rho0, U=9.99933843, Hessian eigs=[-0.01379776  0.0010371   0.01276067]
+   |x*|=0.5252 rho0, U=9.99933849, Hessian eigs=[-0.01342953 -0.00183868  0.01526821]
+   |x*|=0.5252 rho0, U=9.99933849, Hessian eigs=[-0.01342953 -0.00183868  0.01526821]
+   |x*|=0.5368 rho0, U=10.00093547, Hessian eigs=[-0.02620956  0.00665995  0.0195496 ]
+   |x*|=0.5833 rho0, U=10.00067067, Hessian eigs=[-0.07496942  0.02652252  0.0484469 ]
+   habitat centred at nearest critical point: rho0_min = 3.55638e+05 m, M_total = 4.31009e+33 kg = 2.16761e+03 Msun
+   (linear law check: rho0 ~ sqrt(|H|max r c^2/(U^2 g0)) = 3.55638e+05 m)
+N=1000: 10 critical points of U with |x|<0.9 rho0; nearest ones:
+   |x*|=0.6870 rho0, U=9.99995820, Hessian eigs=[-0.0003625   0.00010645  0.00025605]
+   |x*|=0.7186 rho0, U=10.00005034, Hessian eigs=[-0.00024549 -0.0001578   0.00040329]
+   |x*|=0.7616 rho0, U=9.99995838, Hessian eigs=[-0.0004129   0.00011043  0.00030247]
+   |x*|=0.7817 rho0, U=10.00005104, Hessian eigs=[-0.00143705 -0.00041754  0.00185459]
+   |x*|=0.7817 rho0, U=10.00005104, Hessian eigs=[-0.00143705 -0.00041754  0.00185459]
+   habitat centred at nearest critical point: rho0_min = 5.76394e+04 m, M_total = 6.98550e+32 kg = 3.51311e+02 Msun
+   (linear law check: rho0 ~ sqrt(|H|max r c^2/(U^2 g0)) = 5.76390e+04 m)

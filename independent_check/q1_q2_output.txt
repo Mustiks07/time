@@ -1,0 +1,25 @@
+sigma(M,R) = (R**(3/2) - R*sqrt(-2*M + R))/(4*pi*R**(5/2))
+p(M,R)     = (-M*R**(5/2) + R**(7/2) - R**3*sqrt(-2*M + R))/(8*pi*R**4*sqrt(-2*M + R))
+sigma(alpha) = -(alpha - 1)/(4*pi*R)    p(alpha) = (alpha - 1)**2/(16*pi*R*alpha)
+p/sigma = -(alpha - 1)/(4*alpha)
+DEC p=sigma at alpha = [1/5]  => Z_max = [5]
+p/sigma at Z=10: 9/4 = 2.25
+M/R at Z_max: 12/25
+
+Q2 table: M = (R c^2/2G)(1 - 1/Z^2); p_SI = p_geom * c^4/G ; F = 2 pi R p = (1-alpha)^2/(8 alpha) c^4/G
+Z=    2 R=    1 m  M=5.0497e+26 kg = 2.6604e-01 M_J = 2.5396e-04 Msun  p=1.2039e+42 N/m  sigma=4.8155e+42 J/m^2  F=0.0625 c^4/G = 7.5641e+42 N
+Z=    2 R=   10 m  M=5.0497e+27 kg = 2.6604e+00 M_J = 2.5396e-03 Msun  p=1.2039e+41 N/m  sigma=4.8155e+41 J/m^2  F=0.0625 c^4/G = 7.5641e+42 N
+Z=    2 R=  100 m  M=5.0497e+28 kg = 2.6604e+01 M_J = 2.5396e-02 Msun  p=1.2039e+40 N/m  sigma=4.8155e+40 J/m^2  F=0.0625 c^4/G = 7.5641e+42 N
+Z=    2 R= 1000 m  M=5.0497e+29 kg = 2.6604e+02 M_J = 2.5396e-01 Msun  p=1.2039e+39 N/m  sigma=4.8155e+39 J/m^2  F=0.0625 c^4/G = 7.5641e+42 N
+Z=   10 R=    1 m  M=6.6656e+26 kg = 3.5117e-01 M_J = 3.3522e-04 Msun  p=1.9503e+43 N/m  sigma=8.6678e+42 J/m^2  F=1.0125 c^4/G = 1.2254e+44 N
+Z=   10 R=   10 m  M=6.6656e+27 kg = 3.5117e+00 M_J = 3.3522e-03 Msun  p=1.9503e+42 N/m  sigma=8.6678e+41 J/m^2  F=1.0125 c^4/G = 1.2254e+44 N
+Z=   10 R=  100 m  M=6.6656e+28 kg = 3.5117e+01 M_J = 3.3522e-02 Msun  p=1.9503e+41 N/m  sigma=8.6678e+40 J/m^2  F=1.0125 c^4/G = 1.2254e+44 N
+Z=   10 R= 1000 m  M=6.6656e+29 kg = 3.5117e+02 M_J = 3.3522e-01 Msun  p=1.9503e+40 N/m  sigma=8.6678e+39 J/m^2  F=1.0125 c^4/G = 1.2254e+44 N
+Z=  100 R=    1 m  M=6.7323e+26 kg = 3.5468e-01 M_J = 3.3858e-04 Msun  p=2.3598e+44 N/m  sigma=9.5346e+42 J/m^2  F=12.2512 c^4/G = 1.4827e+45 N
+Z=  100 R=   10 m  M=6.7323e+27 kg = 3.5468e+00 M_J = 3.3858e-03 Msun  p=2.3598e+43 N/m  sigma=9.5346e+41 J/m^2  F=12.2513 c^4/G = 1.4827e+45 N
+Z=  100 R=  100 m  M=6.7323e+28 kg = 3.5468e+01 M_J = 3.3858e-02 Msun  p=2.3598e+42 N/m  sigma=9.5346e+40 J/m^2  F=12.2513 c^4/G = 1.4827e+45 N
+Z=  100 R= 1000 m  M=6.7323e+29 kg = 3.5468e+02 M_J = 3.3858e-01 Msun  p=2.3598e+41 N/m  sigma=9.5346e+39 J/m^2  F=12.2512 c^4/G = 1.4827e+45 N
+Z= 1000 R=    1 m  M=6.7329e+26 kg = 3.5471e-01 M_J = 3.3861e-04 Msun  p=2.4029e+45 N/m  sigma=9.6213e+42 J/m^2  F=124.75 c^4/G = 1.5098e+46 N
+Z= 1000 R=   10 m  M=6.7329e+27 kg = 3.5471e+00 M_J = 3.3861e-03 Msun  p=2.4029e+44 N/m  sigma=9.6213e+41 J/m^2  F=124.75 c^4/G = 1.5098e+46 N
+Z= 1000 R=  100 m  M=6.7329e+28 kg = 3.5471e+01 M_J = 3.3861e-02 Msun  p=2.4029e+43 N/m  sigma=9.6213e+40 J/m^2  F=124.75 c^4/G = 1.5098e+46 N
+Z= 1000 R= 1000 m  M=6.7329e+29 kg = 3.5471e+02 M_J = 3.3861e-01 Msun  p=2.4029e+42 N/m  sigma=9.6213e+39 J/m^2  F=124.75 c^4/G = 1.5098e+46 N

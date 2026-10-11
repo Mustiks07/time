@@ -1,0 +1,15 @@
+simplified f'/2 + f/R : (-M + R)/R**2
+p=0 solutions for Q (with sqrt f = 1-M/R branch, R>M): [M]
+check p at Q=M: (-M + R - sqrt(M**2 - 2*M*R + R**2))/(8*pi*R*(M - R))
+numeric check p(Q=M) for M=0.9,R=2: -1.1043592643970545e-18  sigma*4piR^2 = 0.8999999999999999
+
+extremal charge-to-mass ratio q/m = sqrt(4 pi eps0 G) = 8.617517e-11 C/kg  (inverse 1.1604e+10 kg/C)
+  compare electron e/m_e = 1.7588e+11 C/kg ; proton e/m_p = 9.5788e+07 C/kg
+  => one excess elementary charge per 1.1196e+18 u of rest mass (1.8592e-09 kg per e)
+
+Z=10, R=2 m: M/R = 0.9, M = 1.8 m = 2.42386e+27 kg = 1.2770 M_J = 1.2190e-03 Msun
+  Q = 2.08877e+17 C ; check Q/M = 8.61752e-11 C/kg
+  E at shell (static frame) = 4.69323e+26 V/m (Coulomb-form check 4.69323e+26)
+  Schwinger field m_e^2 c^3/(e hbar) = 1.32329e+18 V/m ; ratio E/E_S = 3.5466e+08
+  general: E = (1-1/Z) (1 m / R) * 1.04294e+27 V/m
+  R needed for E = E_S at Z=10: 7.0933e+08 m ; mass then 4.3234e+05 Msun

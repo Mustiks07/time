@@ -1,0 +1,55 @@
+Kerr Riemann components (equatorial) computed: 22
+
+Schwarzschild check (a=0): numeric Riemann vs M/r^3 {1, r/(r-3), -(2r-3)/(r-3)}
+ r=6: numeric ['-0.0138888888888889', '0.00462962962962963', '0.00925925925925926']  expected ['-0.0138888888888889', '0.00462962962962963', '0.00925925925925926']
+ r=10: numeric ['-0.00242857142857143', '0.001', '0.00142857142857143']  expected ['-0.00242857142857143', '0.001', '0.00142857142857143']
+ r=4: numeric ['-0.078125', '0.015625', '0.0625']  expected ['-0.078125', '0.015625', '0.0625']
+
+Kerr check: numeric Riemann vs Marck closed form at a=0.7, r=5:
+   ['-0.0203127174740416', '0.008', '0.0123127174740416'] ['-0.0203127174740416', '0.008', '0.0123127174740416']
+
+u^t direct vs BPT checks:
+  a=0 r=6: direct=1.41421356237309505 BPT=1.41421356237309505
+  a=0.5 r=4.3: direct=1.64038371207131561 BPT=1.64038371207131561
+  a=0.9 r=2.5: direct=2.42942429179718417 BPT=2.42942429179718417
+  a=0.99 r=1.6: direct=4.63265851046416771 BPT=4.63265851046416771
+
+(a) chi with u^t(ISCO)=10: chi = 0.997519536165863  (1-chi = 0.002480463834)
+
+chi=0.997519536166: r_isco=1.25773523324 M ; u^t direct=10.0 BPT=10.0
+   ZAMO speed v=0.5686851442 c (BPT formula 0.5686851442), ZAMO gamma=1.215723746, lapse=0.1215723746  [u^t = gamma/lapse = 10.0]
+   tidal eigenvalues (units 1/M^2): ['-1.507834144', '0.5026113814', '1.005222763']
+   Marck closed form             : ['-1.507834144', '0.5026113814', '1.005222763']
+   |lambda|max = 1.507834144 /M^2 -> M_min (2 m, 1 g0) = 112585.35 Msun ; (1 m) = 79609.866 Msun
+
+chi=0: r_isco=6.0 M ; u^t direct=1.41421356237 BPT=1.41421356237
+   ZAMO speed v=0.5 c (BPT formula 0.5), ZAMO gamma=1.154700538, lapse=0.8164965809  [u^t = gamma/lapse = 1.414213562]
+   tidal eigenvalues (units 1/M^2): ['-0.01388888889', '0.00462962963', '0.009259259259']
+   Marck closed form             : ['-0.01388888889', '0.00462962963', '0.009259259259']
+   |lambda|max = 0.01388888889 /M^2 -> M_min (2 m, 1 g0) = 10805.35 Msun ; (1 m) = 7640.5366 Msun
+
+chi=0.9: r_isco=2.32088304176 M ; u^t direct=2.69637755191 BPT=2.69637755191
+   ZAMO speed v=0.6245486955 c (BPT formula 0.6245486955), ZAMO gamma=1.280432899, lapse=0.4748715173  [u^t = gamma/lapse = 2.696377552]
+   tidal eigenvalues (units 1/M^2): ['-0.2399725072', '0.07999083574', '0.1599816715']
+   Marck closed form             : ['-0.2399725072', '0.07999083574', '0.1599816715']
+   |lambda|max = 0.2399725072 /M^2 -> M_min (2 m, 1 g0) = 44914.426 Msun ; (1 m) = 31759.295 Msun
+
+chi=0.99: r_isco=1.45449793806 M ; u^t direct=6.08117026909 BPT=6.08117026909
+   ZAMO speed v=0.5969316382 c (BPT formula 0.5969316382), ZAMO gamma=1.24642882, lapse=0.2049652888  [u^t = gamma/lapse = 6.081170269]
+   tidal eigenvalues (units 1/M^2): ['-0.9749490602', '0.3249830201', '0.6499660401']
+   Marck closed form             : ['-0.9749490602', '0.3249830201', '0.6499660401']
+   |lambda|max = 0.9749490602 /M^2 -> M_min (2 m, 1 g0) = 90530.74 Msun ; (1 m) = 64014.9 Msun
+
+chi=0.998: r_isco=1.23697065518 M ; u^t direct=10.7909428342 BPT=10.7909428342
+   ZAMO speed v=0.5647503894 c (BPT formula 0.5647503894), ZAMO gamma=1.211736724, lapse=0.1122920159  [u^t = gamma/lapse = 10.79094283]
+   tidal eigenvalues (units 1/M^2): ['-1.585050356', '0.5283501186', '1.056700237']
+   Marck closed form             : ['-1.585050356', '0.5283501186', '1.056700237']
+   |lambda|max = 1.585050356 /M^2 -> M_min (2 m, 1 g0) = 115432.11 Msun ; (1 m) = 81622.829 Msun
+
+near-extremal scaling u^t(ISCO) vs 1-chi:
+   1-chi=1e-02: r_isco-1=0.454498, u^t=6.0811703
+   1-chi=1e-03: r_isco-1=0.181765, u^t=13.768401
+   1-chi=1e-04: r_isco-1=0.0785264, u^t=30.516003
+   1-chi=1e-05: r_isco-1=0.0352324, u^t=66.678867
+   1-chi=1e-06: r_isco-1=0.0160954, u^t=144.62522
+   1-chi=1e-08: r_isco-1=0.0034302, u^t=674.40868

@@ -1,0 +1,66 @@
+g0/c^2 = 1.091137e-16 1/m ; habitat coordinate radius r = 0.1 m
+
+=== ico12: N=12, m=0.75 rho0, U(0)=10.000000000000, |sum n_i|=3.846e-16, min sep=1.0515 rho0
+   a(0) = 2.884444e-18 c^2/rho0   (expected 0.09*|sum n|/N = 2.884444e-18)
+   r/rho0= 0.01: a_max over ball = 2.376001e-11 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.02: a_max over ball = 7.603201e-10 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.05: a_max over ball = 7.425023e-08 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.10: a_max over ball = 2.376120e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.20: a_max over ball = 7.609643e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.30: a_max over ball = 5.800261e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.40: a_max over ball = 2.471906e-03 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.50: a_max over ball = 7.750618e-03 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.60: a_max over ball = 2.041926e-02 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.70: a_max over ball = 4.934204e-02 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.80: a_max over ball = 1.187788e-01 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.90: a_max over ball = 3.215645e-01 c^2/rho0  (argmax shell 12/12)
+
+=== fib100: N=100, m=0.09 rho0, U(0)=10.000000000000, |sum n_i|=2.421e-02, min sep=0.3090 rho0
+   a(0) = 2.178679e-05 c^2/rho0   (expected 0.09*|sum n|/N = 2.178679e-05)
+   r/rho0= 0.01: a_max over ball = 2.200661e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.02: a_max over ball = 2.249682e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.05: a_max over ball = 2.571079e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.10: a_max over ball = 3.534495e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.20: a_max over ball = 6.555713e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.30: a_max over ball = 1.146440e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.40: a_max over ball = 2.037564e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.50: a_max over ball = 3.960371e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.60: a_max over ball = 9.090041e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.70: a_max over ball = 2.552636e-03 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.80: a_max over ball = 8.003603e-03 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.90: a_max over ball = 5.935131e-02 c^2/rho0  (argmax shell 12/12)
+
+=== fib1000: N=1000, m=0.009 rho0, U(0)=10.000000000000, |sum n_i|=1.333e-02, min sep=0.0978 rho0
+   a(0) = 1.200040e-06 c^2/rho0   (expected 0.09*|sum n|/N = 1.200040e-06)
+   r/rho0= 0.01: a_max over ball = 1.204540e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.02: a_max over ball = 1.213159e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.05: a_max over ball = 1.272745e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.10: a_max over ball = 1.477244e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.20: a_max over ball = 2.245500e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.30: a_max over ball = 3.589907e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.40: a_max over ball = 5.974750e-06 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.50: a_max over ball = 1.067050e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.60: a_max over ball = 2.150354e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.70: a_max over ball = 5.356426e-05 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.80: a_max over ball = 2.061422e-04 c^2/rho0  (argmax shell 12/12)
+   r/rho0= 0.90: a_max over ball = 2.299489e-03 c^2/rho0  (argmax shell 12/12)
+
+icosahedron l=6 multipole: a_max ~ C x^5 / rho0, C = 0.23760000  (direction [-3.01330100e-09 -5.25731113e-01 -8.50650808e-01])
+   mpmath direct at x=0.0001 along argmax direction: a/x^5 = 0.2376
+   mpmath direct at x=0.001 along argmax direction: a/x^5 = 0.2376
+   mpmath direct at x=0.01 along argmax direction: a/x^5 = 0.2376000012
+   double-precision ball max at x=0.02: a/x^5 = 0.237600
+   double-precision ball max at x=0.05: a/x^5 = 0.237601
+   double-precision ball max at x=0.1: a/x^5 = 0.237612
+
+ICO: rho0_min = 52.843859 m (leading law), 52.843859 m (exact mp field); r/rho0 = 1.892e-03; each m = 39.6329 m
+     M_total = 9 rho0 c^2/G = 6.40432e+29 kg = 0.32208 Msun = 337.40 M_J
+     check: random-direction max on boundary 0.996507 g0 (<=1 expected), along argmax 1.0 g0
+
+fib100 (origin-centred): rho0_min = 1.996705e+11 m, r/rho0 = 5.01e-13; M_total = 2.41987e+39 kg = 1.21699e+09 Msun
+     (dominated by residual dipole: a(0)*c^2 at this rho0 = 1.000000 g0)
+     (alt. Fibonacci convention z=1-2i/(N-1): |sum n|=1.572e-01)
+
+fib1000 (origin-centred): rho0_min = 1.099807e+10 m, r/rho0 = 9.09e-12; M_total = 1.33289e+38 kg = 6.70330e+07 Msun
+     (dominated by residual dipole: a(0)*c^2 at this rho0 = 1.000000 g0)
+     (alt. Fibonacci convention z=1-2i/(N-1): |sum n|=2.502e-02)

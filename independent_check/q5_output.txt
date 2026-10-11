@@ -1,0 +1,28 @@
+V(R0) = 0    V'(R0) = 0
+V''(R0) = (12*alpha**3*beta2 + 3*alpha**3 + 4*alpha**2*beta2 - alpha**2 - alpha - 1)/(2*R**2*alpha**2)
+beta^2_min(alpha) = -(alpha - 1)*(3*alpha**2 + 2*alpha + 1)/(4*alpha**2*(3*alpha + 1))
+beta^2_min(Z)     = (Z - 1)*(Z**2 + 2*Z + 3)/(4*(Z + 3))
+dV''/dbeta^2 = 2*(3*alpha + 1)/R**2 (>0 => stable for beta^2 > beta^2_min)
+Newtonian limit (Z->1, M/R->0): 0
+   Z=3/2 : beta^2_min = 11/48 = 0.229167
+   Z=2   : beta^2_min = 11/20 = 0.550000
+   Z=3   : beta^2_min = 3/2 = 1.500000
+   Z=5   : beta^2_min = 19/4 = 4.750000
+   Z=10  : beta^2_min = 1107/52 = 21.288462
+beta^2_min = 1  <=>   Z**3 + Z**2 - 3*Z - 15 = 0
+beta^2_min = 1 at Z = [2.52975649803]
+  corresponding alpha = [0.395294962491]  M/R = [0.421870946315]
+  at DEC limit Z=5: beta^2_min = 19/4
+asymptotic Z->inf: beta^2_min ~ 1/4 * Z^2
+
+numerical check (R0=1): finite-difference V'' vs formula
+   Z=1.5, beta2=0.1: FD V''=-0.775001, formula=-0.775000, V(R0)=0.0e+00, V'(R0)=3.9e-07
+   Z=2, beta2=0.5: FD V''=-0.250005, formula=-0.250000, V(R0)=0.0e+00, V'(R0)=1.7e-06
+   Z=3, beta2=0.9: FD V''=-2.400017, formula=-2.400000, V(R0)=2.2e-16, V'(R0)=5.7e-06
+   Z=10, beta2=2.0: FD V''=-50.150516, formula=-50.150000, V(R0)=0.0e+00, V'(R0)=1.6e-05
+   Z=10, beta2=3.0: FD V''=-47.550517, formula=-47.550000, V(R0)=0.0e+00, V'(R0)=8.2e-05
+   Z=1.5: numerical beta^2_min = 0.22917  (formula 0.22917)
+   Z=2: numerical beta^2_min = 0.55000  (formula 0.55000)
+   Z=3: numerical beta^2_min = 1.50000  (formula 1.50000)
+   Z=5: numerical beta^2_min = 4.75000  (formula 4.75000)
+   Z=10: numerical beta^2_min = 21.28868  (formula 21.28846)

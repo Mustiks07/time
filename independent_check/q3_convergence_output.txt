@@ -1,0 +1,7 @@
+x=  8.0 N=  80  optimiser=1.8149411440  discrete-tent=1.8149411440  diff=0.00e+00  exact=1.8134302039
+x=  8.0 N= 160  optimiser=1.8138079861  discrete-tent=1.8138079861  diff=0.00e+00  exact=1.8134302039
+x= 18.0 N=  80  optimiser=10.0428239126  discrete-tent=10.0428239126  diff=1.78e-15  exact=10.0006691449
+x= 18.0 N= 160  optimiser=10.0112145014  discrete-tent=10.0112145014  diff=1.78e-15  exact=10.0006691449
+tent quadrature N=160: 10.0112145014  (exact 10.0006691449)
+tent quadrature N=640: 10.0013283600  (exact 10.0006691449)
+tent quadrature N=2560: 10.0007103463  (exact 10.0006691449)
