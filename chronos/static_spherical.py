@@ -205,9 +205,13 @@ def nested_shells(q, d):
     return R, m, sp_list, lnalpha
 
 
-def optimise_nested_shells(Z, K_shells, w_max=1.0, n_starts=30, seed=0):
+def optimise_nested_shells(Z, K_shells, w_max=1.0, n_starts=30, seed=0, beta2_max=None):
     """Minimise M/R_1 for K thin shells, each obeying |p| ≤ w_max σ (DEC: w_max = 1;
-    causal kinetic 2-D gas: w_max = 1/2) and σ ≥ 0, with central α ≤ 1/Z."""
+    causal kinetic 2-D gas: w_max = 1/2) and σ ≥ 0, with central α ≤ 1/Z.
+    If beta2_max is given, every shell must also be radially stable for some barotropic
+    EOS with dp/dσ ≤ beta2_max (shells decouple at linear order, see
+    thin_shell.stability_beta2_min_general)."""
+    from .thin_shell import stability_beta2_min_general
     rng = np.random.default_rng(seed)
     target = math.log(Z)
     nv = 2 * K_shells - 1
@@ -225,10 +229,19 @@ def optimise_nested_shells(Z, K_shells, w_max=1.0, n_starts=30, seed=0):
         try:
             R, m, spl, lna = nested_shells(q, d)
         except ValueError:
-            return -np.ones(3 * K_shells)
+            return -np.ones(3 * K_shells + 1 + (K_shells if beta2_max is not None else 0))
         c = [-lna - target]
         for (s, p) in spl:
             c += [w_max * s - p, w_max * s + p, s]
+        if beta2_max is not None:
+            prev = 0.0
+            for i in range(K_shells):
+                try:
+                    b2, above = stability_beta2_min_general(prev, m[i], R[i])
+                    c.append(beta2_max - b2 if above else -1.0)
+                except (ValueError, ZeroDivisionError):
+                    c.append(-1.0)
+                prev = m[i]
         return np.array(c)
 
     best = None
@@ -577,3 +590,36 @@ def warm_controls_shell_cluster(Z, n_layer=8, n_gap=4, n_pl=18, layer=0.01):
     rho = np.concatenate((np.full(n_layer, y_top / layer), np.full(n_gap, math.exp(-30)), np.full(n_pl, y_pl)))
     lam = np.concatenate((np.full(n_layer, 0.999), np.zeros(n_gap), np.full(n_pl, 0.999)))
     return np.concatenate((np.log(h), np.log(rho), np.arctanh(lam))), n_layer + n_gap + n_pl
+
+
+# ---------------------------------------------------------------------------
+# 8. Causally stable nested shells: analytic family (round-1 result E20)
+# ---------------------------------------------------------------------------
+
+def test_shell_critical_compactness(beta2_max):
+    """Compactness y_c = 2m/R above which a light (test) thin shell around mass m cannot be
+    radially stable with dp/dσ ≤ beta2_max.  y_c = 2/3 (photon sphere) for beta2_max = 1."""
+    from scipy.optimize import brentq
+    from .thin_shell import stability_beta2_min_general
+    return brentq(lambda y: stability_beta2_min_general(y / 2, y / 2 * (1 + 1e-7))[0] - beta2_max,
+                  0.02, 0.95, xtol=1e-12)
+
+
+def single_shell_critical_Z(beta2_max):
+    """Largest Z of a stable single thin shell with flat interior: β²_min(1/Z) = beta2_max."""
+    from scipy.optimize import brentq
+    from .thin_shell import stability_beta2_min
+    return brentq(lambda Z: stability_beta2_min(1 / Z)[0] - beta2_max, 1.0001, 1e3, xtol=1e-12)
+
+
+def stable_family_mass(Z, beta2_max=1.0):
+    """Mass (units r_in c²/G) of the family: marginally stable inner shell (Z_1), vacuum gap
+    down to the test-shell critical compactness y_c, then a 'plateau' of marginally stable
+    light shells at y = y_c (α ∝ r^n, n = y_c/(2(1-y_c))):
+        M/r_in = (1 - Z_1^{-2})/2 · (Z/Z_1)^{1/n}       (Z ≥ Z_1)."""
+    Z1 = single_shell_critical_Z(beta2_max)
+    if Z <= Z1:
+        return 0.5 * (1 - 1 / Z**2), dict(Z1=Z1, y_c=None, n=None)
+    yc = test_shell_critical_compactness(beta2_max)
+    n = yc / (2 * (1 - yc))
+    return 0.5 * (1 - 1 / Z1**2) * (Z / Z1) ** (1 / n), dict(Z1=Z1, y_c=yc, n=n)

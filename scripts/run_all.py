@@ -161,6 +161,18 @@ ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.18), ncol=2, fontsize=8)
 fig.set_size_inches(6.4, 4.8)
 save(fig, 'fig03_cavity_bound.png')
 
+stable = {}
+for b2 in [1.0, 1 / 3]:
+    stable[f'beta2max={b2:.3f}'] = {
+        'test_shell_critical_compactness': ss.test_shell_critical_compactness(b2),
+        'single_shell_critical_Z': ss.single_shell_critical_Z(b2),
+        'family_M_over_rin': {Z: ss.stable_family_mass(Z, b2)[0] for Z in [5.0, 10.0, 100.0]}}
+stable_json = os.path.join(RES, 'stable_nested_shells.json')   # optimiser runs (E20), produced separately
+if os.path.exists(stable_json):
+    stable['optimiser'] = json.load(open(stable_json))
+OUT['causally_stable_shells'] = stable
+print(json.dumps(stable, indent=1, default=float)[:800])
+
 # ---------------------------------------------------------------------------------------------
 section('4. Mass requirements in SI')
 mass_tab = []

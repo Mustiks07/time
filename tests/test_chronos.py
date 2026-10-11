@@ -171,3 +171,12 @@ def test_theorem2_key_identity_symbolic():
     y = 2 * m / r
     rhs = y / (r * (1 - y)) + sp.diff(y, r) / (2 * (1 - y))
     assert sp.simplify(dPhi - rhs - 4 * sp.pi * r**2 * (pr - rho) / (r - 2 * m)) == 0
+
+
+def test_causal_stability_thresholds():
+    # light shells with causal EOS are stable exactly outside the photon sphere (r = 3m)
+    assert ss.test_shell_critical_compactness(1.0) == pytest.approx(2 / 3, abs=1e-6)
+    assert ss.single_shell_critical_Z(1.0) == pytest.approx(2.5297565, abs=1e-6)
+    M, info = ss.stable_family_mass(10.0, 1.0)
+    assert info['n'] == pytest.approx(1.0, abs=1e-5)
+    assert M == pytest.approx(0.5 * (1 - 1 / 2.5297565**2) * 10 / 2.5297565, rel=1e-5)

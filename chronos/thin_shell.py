@@ -226,3 +226,37 @@ def shell_table(Zs=(2, 10, 100, 1000), Rs=(1, 10, 100, 1000)):
                                  s['p_over_sigma'], great_circle_force(a),
                                  energy_conditions_shell(s['sigma'], s['p'])['DEC']))
     return rows
+
+
+# ---------------------------------------------------------------------------
+# 6. Stability of a static shell with Schwarzschild(a) inside and Schwarzschild(b) outside
+# ---------------------------------------------------------------------------
+
+def stability_beta2_min_general(a, b, R=1.0):
+    """Minimal β² = dp/dσ for radial stability of a static thin shell between vacuum
+    regions of Misner–Sharp mass a (inside) and b (outside).
+
+    Equation of motion: √(f_a+Ṙ²) − √(f_b+Ṙ²) = m/R  ⇒  Ṙ² + V = 0,
+        V = f_a − A²,  A = (b−a)/m + m/(2R),  f_x = 1 − 2x/R,  m = 4πR²σ(R).
+    The masses a, b are conserved during the shell's own radial motion, so nested shells
+    decouple at linear order and each must be stable individually.
+    Returns (β²_min, stable_above) with stable_above = True if V'' grows with β².
+    """
+    fa, fb = 1 - 2 * a / R, 1 - 2 * b / R
+    ua, ub = math.sqrt(fa), math.sqrt(fb)
+    sig = (ua - ub) / (4 * math.pi * R)
+    p = ((1 - b / R) / ub - (1 - a / R) / ua) / (8 * math.pi * R)
+    m = 4 * math.pi * R**2 * sig
+    m1 = -8 * math.pi * R * p
+    d = b - a
+
+    def Vpp(beta2):
+        m2 = -8 * math.pi * p + 16 * math.pi * beta2 * (sig + p)
+        A = d / m + m / (2 * R)
+        A1 = -d * m1 / m**2 + m1 / (2 * R) - m / (2 * R**2)
+        A2 = 2 * d * m1**2 / m**3 - d * m2 / m**2 + m2 / (2 * R) - m1 / R**2 + m / R**3
+        fa2 = -4 * a / R**3
+        return fa2 - 2 * A1**2 - 2 * A * A2
+
+    v0, v1 = Vpp(0.0), Vpp(1.0)
+    return -v0 / (v1 - v0), (v1 - v0) > 0
